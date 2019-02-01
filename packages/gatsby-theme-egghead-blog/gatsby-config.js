@@ -1,3 +1,5 @@
+const path = require('path')
+
 const config = require('./config/website')
 const pathPrefix = config.pathPrefix === '/' ? '' : config.pathPrefix
 
@@ -35,9 +37,15 @@ module.exports = {
   },
   plugins: [
     {
+      resolve: `gatsby-plugin-page-creator`,
+      options: {
+        path: path.join(__dirname, 'src', 'pages'),
+      },
+    },
+    {
       resolve: 'gatsby-source-filesystem',
       options: {
-        path: `${__dirname}/content/blog`,
+        path: `content/blog`,
         name: 'blog',
       },
     },
@@ -150,7 +158,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-typography`,
       options: {
-        pathToConfigModule: `src/lib/typography`,
+        pathToConfigModule: require.resolve(`./src/lib/typography`),
       },
     },
     'gatsby-plugin-offline',

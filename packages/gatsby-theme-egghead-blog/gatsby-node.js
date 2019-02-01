@@ -23,7 +23,7 @@ const createPosts = (createPage, createRedirect, edges) => {
 
     createPage({
       path: pagePath,
-      component: path.resolve(`./src/templates/post.js`),
+      component: require.resolve(`./src/templates/post.js`),
       context: {
         id: node.id,
         prev,
@@ -109,7 +109,7 @@ const createPaginatedPages = (createPage, edges, pathPrefix, context) => {
 
     createPage({
       path: index > 0 ? `${pathPrefix}/${index}` : `${pathPrefix}`,
-      component: path.resolve(`src/templates/blog.js`),
+      component: require.resolve(`./src/templates/blog.js`),
       context: {
         pagination: {
           page,
