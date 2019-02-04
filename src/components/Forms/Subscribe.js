@@ -36,7 +36,7 @@ class SignUp extends React.Component {
   }
 
   async handleSubmit(values) {
-    this.setState({ submitted: true, loading: true })
+    this.setState({ submitted: true, })
     try {
       const response = await fetch(
         `https://app.convertkit.com/forms/${FORM_ID}/subscriptions`,
@@ -54,21 +54,19 @@ class SignUp extends React.Component {
 
       this.setState({
         submitted: true,
-        loading: false,
         response: responseJson,
         errorMessage: null,
       })
     } catch (error) {
       this.setState({
         submitted: false,
-        loading: false,
         errorMessage: 'Something went wrong!',
       })
     }
   }
 
   render() {
-    const { submitted, loading, response, errorMessage } = this.state
+    const { submitted, response, errorMessage } = this.state
     const successful = response && response.status === 'success'
 
     return (
@@ -92,7 +90,7 @@ class SignUp extends React.Component {
             }}
             validationSchema={SubscribeSchema}
             onSubmit={values => this.handleSubmit(values)}
-            render={({ errors, touched }) => (
+            render={({ errors, touched, isSubmitting }) => (
               <Form
                 css={css`
                   display: flex;
@@ -174,15 +172,15 @@ class SignUp extends React.Component {
                     type="email"
                   />
                 </label>
-                <button data-element="submit" type="submit">
-                  {!loading && 'Submit'}
-                  {loading && 'Submitting...'}
+                <button data-element="submit" type="submit" disabled={isSubmitting}>
+                  {!isSubmitting && 'Submit'}
+                  {isSubmitting && 'Submitting...'}
                 </button>
               </Form>
             )}
           />
         )}
-        {submitted && !loading && <PostSubmissionMessage response={response} />}
+        {submitted && !isSubmitting && <PostSubmissionMessage response={response} />}
         {errorMessage && <div>{errorMessage}</div>}
       </div>
     )
