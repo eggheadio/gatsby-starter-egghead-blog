@@ -36,7 +36,7 @@ class SignUp extends React.Component {
   }
 
   async handleSubmit(values) {
-    this.setState({ submitted: true, })
+    this.setState({ submitted: true })
     try {
       const response = await fetch(
         `https://app.convertkit.com/forms/${FORM_ID}/subscriptions`,
