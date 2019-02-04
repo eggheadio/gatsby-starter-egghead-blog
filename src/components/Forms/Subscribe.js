@@ -1,21 +1,21 @@
-import React from 'react';
-import { Formik, Field, Form, ErrorMessage } from 'formik';
-import * as Yup from 'yup';
-import { css } from '@emotion/core';
-import theme from '../../../config/theme';
-import { rhythm } from '../../lib/typography';
-import { bpMaxSM } from '../../lib/breakpoints';
-import Message from '../ConfirmMessage/Message';
-import { PleaseConfirmIllustration } from '../ConfirmMessage/Illustrations';
+import React from 'react'
+import { Formik, Field, Form, ErrorMessage } from 'formik'
+import * as Yup from 'yup'
+import { css } from '@emotion/core'
+import theme from '../../../config/theme'
+import { rhythm } from '../../lib/typography'
+import { bpMaxSM } from '../../lib/breakpoints'
+import Message from '../ConfirmMessage/Message'
+import { PleaseConfirmIllustration } from '../ConfirmMessage/Illustrations'
 
-const FORM_ID = process.env.CONVERTKIT_SIGNUP_FORM;
+const FORM_ID = process.env.CONVERTKIT_SIGNUP_FORM
 
 const SubscribeSchema = Yup.object().shape({
   email_address: Yup.string()
     .email('Invalid email address')
     .required('Required'),
   first_name: Yup.string(),
-});
+})
 
 const PostSubmissionMessage = ({ response }) => {
   return (
@@ -27,16 +27,16 @@ const PostSubmissionMessage = ({ response }) => {
           **Please check your inbox!**`}
       />
     </div>
-  );
-};
+  )
+}
 
 class SignUp extends React.Component {
   state = {
     submitted: false,
-  };
+  }
 
   async handleSubmit(values) {
-    this.setState({ submitted: true });
+    this.setState({ submitted: true })
     try {
       const response = await fetch(
         `https://app.convertkit.com/forms/${FORM_ID}/subscriptions`,
@@ -48,34 +48,34 @@ class SignUp extends React.Component {
             'Content-Type': 'application/json',
           },
         }
-      );
+      )
 
-      const responseJson = await response.json();
+      const responseJson = await response.json()
 
       this.setState({
         submitted: true,
         response: responseJson,
         errorMessage: null,
-      });
+      })
     } catch (error) {
       this.setState({
         submitted: false,
         errorMessage: 'Something went wrong!',
-      });
+      })
     }
   }
 
   render() {
-    const { submitted, response, errorMessage } = this.state;
-    const successful = response && response.status === 'success';
+    const { submitted, response, errorMessage } = this.state
+    const successful = response && response.status === 'success'
 
     return (
       <div>
         {!successful && (
           <h2
             css={css`
-              margin-bottom: ${rhythm(1)};
-              margin-top: 0;
+              margin-bottom: ${rhythm(1)}
+              margin-top: 0
             `}
           >
             Join the Newsletter
@@ -94,35 +94,35 @@ class SignUp extends React.Component {
               {!successful && (
                 <Form
                   css={css`
-                    display: flex;
-                    align-items: flex-end;
+                    display: flex
+                    align-items: flex-end
                     label:not(:first-of-type),
                     button {
-                      margin-left: 10px;
+                      margin-left: 10px
                     }
                     .field-error {
-                      display: block;
-                      //position: absolute;
-                      color: ${theme.colors.red};
-                      font-size: 80%;
+                      display: block
+                      //position: absolute
+                      color: ${theme.colors.red}
+                      font-size: 80%
                     }
                     input,
                     label {
-                      width: 100%;
+                      width: 100%
                     }
                     ${bpMaxSM} {
-                      flex-direction: column;
-                      align-items: flex-start;
-                      width: auto;
+                      flex-direction: column
+                      align-items: flex-start
+                      width: auto
                       label,
                       input {
-                        margin: 5px 0 0 0 !important;
-                        width: 100%;
-                        display: flex;
-                        flex-direction: column;
+                        margin: 5px 0 0 0 !important
+                        width: 100%
+                        display: flex
+                        flex-direction: column
                       }
                       button {
-                        margin: 20px 0 0 0;
+                        margin: 20px 0 0 0
                       }
                     }
                   `}
@@ -130,9 +130,9 @@ class SignUp extends React.Component {
                   <label htmlFor="first_name">
                     <div
                       css={css`
-                        display: flex;
-                        justify-content: space-between;
-                        align-items: flex-end;
+                        display: flex
+                        justify-content: space-between
+                        align-items: flex-end
                       `}
                     >
                       First Name
@@ -153,9 +153,9 @@ class SignUp extends React.Component {
                   <label htmlFor="email">
                     <div
                       css={css`
-                        display: flex;
-                        justify-content: space-between;
-                        align-items: flex-end;
+                        display: flex
+                        justify-content: space-between
+                        align-items: flex-end
                       `}
                     >
                       Email
@@ -191,8 +191,8 @@ class SignUp extends React.Component {
           )}
         />
       </div>
-    );
+    )
   }
 }
 
-export default SignUp;
+export default SignUp
