@@ -26,7 +26,7 @@ A starter project in [Gatsby.js](https://www.gatsbyjs.org/) with [MDX](https://g
 - `git clone git@github.com:eggheadio/gatsby-starter-egghead-blog.git`
 - `cd gatsby-starter-egghead-blog`
 - `npm install`
-- `gatsby develop`
+- `npm run develop`
 - visit http://localhost:8000
 
 ## Setup via Gatsby CLI
