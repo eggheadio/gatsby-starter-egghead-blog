@@ -1,7 +1,7 @@
 {
   "env": {
     "NODE_ENV": "production",
-    "GOOGLE_ANALYTICS": "GA_GOES_HERE",
+    "GOOGLE_ANALYTICS": "GA_GOES_HERE"
   },
   "name": "PROJECT_NAME",
   "alias": ["DOMAIN_NAME", "www.DOMAIN_NAME"],
