@@ -65,6 +65,7 @@
   "scripts": {
     "build": "gatsby build",
     "develop": "gatsby develop",
-    "start": "serve public/"
+    "start": "serve public/",
+    "now-build": "npm run build"
   }
 }
