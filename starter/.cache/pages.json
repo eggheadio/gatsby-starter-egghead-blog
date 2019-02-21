@@ -1,0 +1,87 @@
+[
+    {
+        "componentChunkName": "component---packages-gatsby-theme-egghead-blog-src-pages-index-js",
+        "jsonName": "index",
+        "path": "/"
+    },
+    {
+        "componentChunkName": "component---packages-gatsby-theme-egghead-blog-src-pages-404-js",
+        "jsonName": "404-html-516",
+        "path": "/404.html"
+    },
+    {
+        "componentChunkName": "component---packages-gatsby-theme-egghead-blog-src-pages-404-js",
+        "jsonName": "404-22d",
+        "path": "/404/"
+    },
+    {
+        "componentChunkName": "component---packages-gatsby-theme-egghead-blog-src-templates-blog-js",
+        "jsonName": "blog-c06",
+        "path": "/blog"
+    },
+    {
+        "componentChunkName": "component---packages-gatsby-theme-egghead-blog-src-templates-blog-js",
+        "jsonName": "blog-1-85f",
+        "path": "/blog/1"
+    },
+    {
+        "componentChunkName": "component---packages-gatsby-theme-egghead-blog-src-templates-post-js",
+        "jsonName": "demo-01-32e",
+        "path": "/demo-01"
+    },
+    {
+        "componentChunkName": "component---packages-gatsby-theme-egghead-blog-src-templates-post-js",
+        "jsonName": "demo-02-a64",
+        "path": "/demo-02"
+    },
+    {
+        "componentChunkName": "component---packages-gatsby-theme-egghead-blog-src-templates-post-js",
+        "jsonName": "demo-03-910",
+        "path": "/demo-03"
+    },
+    {
+        "componentChunkName": "component---packages-gatsby-theme-egghead-blog-src-templates-post-js",
+        "jsonName": "demo-04-a59",
+        "path": "/demo-04"
+    },
+    {
+        "componentChunkName": "component---packages-gatsby-theme-egghead-blog-src-templates-post-js",
+        "jsonName": "demo-05-020",
+        "path": "/demo-05"
+    },
+    {
+        "componentChunkName": "component---packages-gatsby-theme-egghead-blog-src-templates-post-js",
+        "jsonName": "demo-06-414",
+        "path": "/demo-06"
+    },
+    {
+        "componentChunkName": "component---packages-gatsby-theme-egghead-blog-src-templates-post-js",
+        "jsonName": "demo-07-404",
+        "path": "/demo-07"
+    },
+    {
+        "componentChunkName": "component---packages-gatsby-theme-egghead-blog-src-templates-post-js",
+        "jsonName": "demo-08-b36",
+        "path": "/demo-08"
+    },
+    {
+        "componentChunkName": "component---packages-gatsby-theme-egghead-blog-src-templates-post-js",
+        "jsonName": "demo-09-167",
+        "path": "/demo-09"
+    },
+    {
+        "componentChunkName": "component---cache-dev-404-page-js",
+        "jsonName": "dev-404-page-5f9",
+        "path": "/dev-404-page/"
+    },
+    {
+        "componentChunkName": "component---packages-gatsby-theme-egghead-blog-src-pages-messages-js",
+        "jsonName": "messages-f1c",
+        "path": "/messages/"
+    },
+    {
+        "componentChunkName": "component---packages-gatsby-theme-egghead-blog-src-pages-subscribe-js",
+        "jsonName": "subscribe-4f8",
+        "path": "/subscribe/"
+    }
+]
