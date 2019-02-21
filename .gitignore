@@ -30,3 +30,4 @@ node_modules
 .cache/
 .DS_Store
 public
+starter/public
