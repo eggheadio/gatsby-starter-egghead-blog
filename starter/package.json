@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "gatsby": "latest",
-    "gatsby-theme-egghead-blog": "*"
+    "gatsby-theme-egghead-blog": "*",
+    "gatsby-plugin-manifest": "^2.0.13"
   }
 }

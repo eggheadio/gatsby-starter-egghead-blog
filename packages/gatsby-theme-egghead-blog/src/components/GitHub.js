@@ -19,7 +19,6 @@ const GitHub = ({ url, color }) => (
     `}
     render={({ site: { siteMetadata } }) => {
       const { githubUrl } = siteMetadata.social
-      console.log({ url, githubUrl })
       const to = url || githubUrl
       const textColor = color || theme.colors.body_color
       return (
