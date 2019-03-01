@@ -1,6 +1,6 @@
 import React from 'react'
 import { css } from '@emotion/core'
-import theme from '../../config/theme'
+import theme from '../lib/theme'
 
 import { TwitterShareButton, FacebookShareButton } from 'react-share'
 

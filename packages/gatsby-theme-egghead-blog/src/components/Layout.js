@@ -5,12 +5,11 @@ import { MDXProvider } from '@mdx-js/tag'
 import { Global, css } from '@emotion/core'
 import { ThemeProvider } from 'emotion-theming'
 import { bpMaxSM } from '../lib/breakpoints'
-import theme from '../../config/theme'
+import theme from '../lib/theme'
 import mdxComponents from './mdx'
 import Header from './Header'
 import reset from '../lib/reset'
 import { fonts } from '../lib/typography'
-import config from '../../config/website'
 import Footer from '../components/Footer'
 
 export const globalStyles = css`
@@ -114,6 +113,7 @@ export default ({
   noSubscribeForm,
 }) => {
   const {
+    title,
     description: siteDescription,
     keywords: siteKeywords,
   } = site.siteMetadata
@@ -139,7 +139,7 @@ export default ({
           `}
         >
           <Helmet
-            title={config.siteTitle}
+            title={title}
             meta={[
               { name: 'description', content: description },
               { name: 'keywords', content: keywords },

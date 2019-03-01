@@ -1,5 +1,5 @@
 import { css } from '@emotion/core'
-import theme from '../../config/theme'
+import theme from './theme'
 import typography, { fonts } from '../lib/typography'
 
 const reset = css`
