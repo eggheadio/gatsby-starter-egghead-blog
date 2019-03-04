@@ -1,7 +1,4 @@
 const path = require('path')
-
-const config = require('./config/website')
-
 require('dotenv').config({
   path: `.env.${process.env.NODE_ENV}`,
 })

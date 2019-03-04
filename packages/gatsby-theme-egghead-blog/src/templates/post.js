@@ -8,14 +8,13 @@ import Container from 'components/Container'
 import Layout from '../components/Layout'
 import { fonts } from '../lib/typography'
 import Share from '../components/Share'
-import config from '../../config/website'
 import { bpMaxSM } from '../lib/breakpoints'
 
 export default function Post({
   data: { site, mdx },
   pageContext: { next, prev },
 }) {
-  const author = mdx.frontmatter.author || config.author
+  const author = mdx.frontmatter.author || site.siteMetadata.author.name
   const date = mdx.frontmatter.date
   const title = mdx.frontmatter.title
   const banner = mdx.frontmatter.banner
@@ -80,9 +79,9 @@ export default function Post({
       </article>
       <Container noVerticalPadding>
         <Share
-          url={`${config.siteUrl}/${mdx.frontmatter.slug}/`}
+          url={`${site.siteMetadata.siteUrl}/${mdx.frontmatter.slug}/`}
           title={title}
-          twitterHandle={config.twitterHandle}
+          twitterHandle={site.siteMetadata.social.twitter}
         />
         <br />
       </Container>

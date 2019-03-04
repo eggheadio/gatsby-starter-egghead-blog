@@ -173,9 +173,13 @@ export const pageQuery = graphql`
   fragment site on Site {
     siteMetadata {
       title
+      siteUrl
       description
       author {
         name
+      }
+      social {
+        twitter
       }
       keywords
     }
