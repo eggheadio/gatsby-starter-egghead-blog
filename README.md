@@ -28,8 +28,8 @@ A starter project in [Gatsby.js](https://www.gatsbyjs.org/) with [MDX](https://g
 
 - `git clone git@github.com:eggheadio/gatsby-starter-egghead-blog.git`
 - `cd gatsby-starter-egghead-blog`
-- `npm install`
-- `npm run develop`
+- `yarn`
+- `yarn workspace starter start`
 - visit http://localhost:8000
 
 ## Setup via Gatsby CLI
