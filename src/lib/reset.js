@@ -50,7 +50,6 @@ const reset = css`
     &:focus {
       color: ${theme.colors.link_color_hover};
     }
-
   }
 
   a:not([href]):not([tabindex]) {
@@ -63,6 +62,17 @@ const reset = css`
     }
     &:focus {
       outline: 0;
+    }
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    a {
+      color: inherit;
     }
   }
 
