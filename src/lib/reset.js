@@ -3,15 +3,15 @@ import theme from '../../config/theme'
 import typography, { fonts } from '../lib/typography'
 
 const reset = css`
-form {
-  margin: 0;
-}
-ul, ol {
-  list-style-position: inside;
-  margin-left: 0;
-  font-size: ${typography.baseFontSize};
-}
-*,
+  form {
+    margin: 0;
+  }
+  ul, ol {
+    list-style-position: inside;
+    margin-left: 0;
+    font-size: ${typography.baseFontSize};
+  }
+  *,
   *:before,
   *:after {
     box-sizing: inherit;
@@ -30,7 +30,7 @@ ul, ol {
     box-sizing: border-box;
     -ms-overflow-style: scrollbar;
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-
+  }
   body {
     color: ${theme.colors.body_color};
     background-color: ${theme.colors.bg_color};
@@ -39,7 +39,7 @@ ul, ol {
     color: ${theme.colors.white};
     background-color: ${theme.colors.link_color};
   }
-  
+
   a {
     color: ${theme.colors.link_color};
     transition: all 0.3s ease-in-out;
@@ -48,9 +48,9 @@ ul, ol {
     &:focus {
       color: ${theme.colors.link_color_hover};
     }
-  
+
   }
-  
+
   a:not([href]):not([tabindex]) {
     color: inherit;
     text-decoration: none;
@@ -165,7 +165,6 @@ ul, ol {
   [hidden] {
     display: none !important;
   }
-
 `
 
 export default reset
