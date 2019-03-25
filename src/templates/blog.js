@@ -27,22 +27,7 @@ const Blog = ({
   return (
     <Layout site={site}>
       <SEO />
-      <Container
-        noVerticalPadding
-        css={css`
-          a,
-          p {
-          }
-          h2 {
-            a {
-              color: inherit;
-            }
-          }
-          small {
-            display: block;
-          }
-        `}
-      >
+      <Container noVerticalPadding>
         {posts.map(({ node: post }) => (
           <div
             key={post.id}

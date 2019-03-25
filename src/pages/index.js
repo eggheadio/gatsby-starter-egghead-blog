@@ -76,9 +76,9 @@ export default function Index({ data: { site, allMdx } }) {
               css={css({
                 marginBottom: rhythm(0.3),
                 transition: theme.transition.ease,
-                /* ':hover': {
+                ':hover': {
                   color: theme.brand.primary,
-                }, */
+                },
               })}
             >
               <Link
@@ -97,7 +97,6 @@ export default function Index({ data: { site, allMdx } }) {
                 Read Article →
               </Link>
             </Description>
-            <span />
           </div>
         ))}
         <Link

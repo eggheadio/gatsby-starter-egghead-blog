@@ -44,7 +44,7 @@ const reset = css`
 
   a {
     color: ${theme.colors.link_color};
-    transition: all 0.3s ease-in-out;
+    transition: ${theme.transition.ease};
     text-decoration: none;
     &:hover,
     &:focus {
@@ -73,6 +73,11 @@ const reset = css`
   h6 {
     a {
       color: inherit;
+      &:hover,
+      &:focus {
+        color: inherit;
+        text-decoration: none;
+      }
     }
   }
 
