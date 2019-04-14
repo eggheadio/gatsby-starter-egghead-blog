@@ -114,8 +114,8 @@ module.exports = {
                 return Object.assign({}, edge.node.frontmatter, {
                   description: edge.node.excerpt,
                   date: edge.node.fields.date,
-                  url: site.siteMetadata.siteUrl + edge.node.fields.slug,
-                  guid: site.siteMetadata.siteUrl + edge.node.fields.slug,
+                  url: site.siteMetadata.siteUrl +"/"+ edge.node.fields.slug,
+                  guid: site.siteMetadata.siteUrl +"/"+ edge.node.fields.slug,
                 })
               })
             },
