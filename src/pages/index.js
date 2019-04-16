@@ -47,15 +47,6 @@ const Hero = () => (
   </section>
 )
 
-const PostTitle = styled.h2`
-  margin-bottom: ${rhythm(0.3)};
-  transition: ${theme.transition.ease};
-  :hover {
-    color: ${theme.brand.primary};
-    transition: ${theme.transition.ease};
-  }
-`
-
 const Description = styled.p`
   margin-bottom: 10px;
   display: inline-block;
@@ -81,12 +72,22 @@ export default function Index({ data: { site, allMdx } }) {
               margin-bottom: 40px;
             `}
           >
-            <Link
-              to={post.frontmatter.slug}
-              aria-label={`View ${post.frontmatter.title}`}
+            <h2
+              css={css({
+                marginBottom: rhythm(0.3),
+                transition: theme.transition.ease,
+                ':hover': {
+                  color: theme.brand.primary,
+                },
+              })}
             >
-              <PostTitle>{post.frontmatter.title}</PostTitle>
-            </Link>
+              <Link
+                to={post.frontmatter.slug}
+                aria-label={`View ${post.frontmatter.title}`}
+              >
+                {post.frontmatter.title}
+              </Link>
+            </h2>
             <Description>
               {post.excerpt}{' '}
               <Link
@@ -96,7 +97,6 @@ export default function Index({ data: { site, allMdx } }) {
                 Read Article →
               </Link>
             </Description>
-            <span />
           </div>
         ))}
         <Link
