@@ -2,7 +2,7 @@
 
 This is based on Robin Wieruch's https://github.com/rwieruch/gatsby-mdx-blog-starter-project
 
-Lot's of nice pieces are also borrowed from Jason Lengstorf https://github.com/jlengstorf/lengstorf.com
+Lots of nice pieces are also borrowed from Jason Lengstorf https://github.com/jlengstorf/lengstorf.com
 
 A starter project in [Gatsby.js](https://www.gatsbyjs.org/) with [MDX](https://github.com/mdx-js/mdx).
 
