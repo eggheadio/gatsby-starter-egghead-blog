@@ -2,7 +2,7 @@ import React from 'react'
 import { Formik, Field, Form, ErrorMessage } from 'formik'
 import * as Yup from 'yup'
 import { css } from '@emotion/core'
-import theme from '../../../config/theme'
+import theme from '../../lib/theme'
 import { rhythm } from '../../lib/typography'
 import { bpMaxSM } from '../../lib/breakpoints'
 import Message from '../ConfirmMessage/Message'
@@ -47,7 +47,7 @@ class SignUp extends React.Component {
             Accept: 'application/json',
             'Content-Type': 'application/json',
           },
-        }
+        },
       )
 
       const responseJson = await response.json()
@@ -183,9 +183,8 @@ class SignUp extends React.Component {
                   </button>
                 </Form>
               )}
-              {submitted && !isSubmitting && (
-                <PostSubmissionMessage response={response} />
-              )}
+              {submitted &&
+                !isSubmitting && <PostSubmissionMessage response={response} />}
               {errorMessage && <div>{errorMessage}</div>}
             </>
           )}

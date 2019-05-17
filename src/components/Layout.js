@@ -1,11 +1,12 @@
-import React, { Fragment } from 'react'
+import React, { Fragment, useState, useEffect } from 'react'
 import Helmet from 'react-helmet'
 import { graphql } from 'gatsby'
 import { MDXProvider } from '@mdx-js/tag'
 import { Global, css } from '@emotion/core'
-import { ThemeProvider } from 'emotion-theming'
+import { ThemeProvider, themes, useTheme } from './Theming'
+// import { ThemeProvider } from 'emotion-theming'
 import { bpMaxSM } from '../lib/breakpoints'
-import theme from '../../config/theme'
+import theme from '../lib/theme'
 import mdxComponents from './mdx'
 import Header from './Header'
 import reset from '../lib/reset'
@@ -113,6 +114,28 @@ export default ({
   noFooter,
   noSubscribeForm,
 }) => {
+  const initializeTheme = () => {
+    if (typeof window !== 'undefined') {
+      return localStorage.getItem('theme') || 'default'
+    } else {
+      return 'default'
+    }
+  }
+
+  const [themeName, setTheme] = useState(initializeTheme)
+
+  useEffect(
+    () => {
+      localStorage.setItem('theme', themeName)
+    },
+    [themeName],
+  )
+
+  const toggleTheme = name => setTheme(name)
+  const theme = {
+    ...themes[themeName],
+    toggleTheme: toggleTheme,
+  }
   const {
     description: siteDescription,
     keywords: siteKeywords,

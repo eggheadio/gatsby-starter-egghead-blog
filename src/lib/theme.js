@@ -1,5 +1,5 @@
 import { darken, lighten } from 'polished'
-import { fonts } from '../src/lib/typography'
+import { fonts } from './typography'
 
 const brand = {
   primary: '#0078CC',

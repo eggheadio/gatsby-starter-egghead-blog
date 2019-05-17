@@ -1,6 +1,6 @@
 import React from 'react'
 import Link from './Link'
-import theme from '../../config/theme'
+import theme from '../lib/theme'
 import { css } from '@emotion/core'
 import config from '../../config/website'
 
