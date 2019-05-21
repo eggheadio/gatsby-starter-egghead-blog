@@ -15,6 +15,31 @@ import Footer from '../components/Footer'
 
 const getGlobalStyles = theme => {
   return css`
+    body {
+      background: ${theme.colors.bodyBg};
+      color: ${theme.colors.text};
+    }
+    ::selection {
+      color: ${theme.colors.text};
+      background-color: ${theme.colors.primary};
+    }
+
+    a {
+      color: ${theme.colors.link};
+      text-decoration: none;
+      &:hover,
+      &:focus {
+        color: ${lighten(0.5, theme.colors.link)};
+      }
+    }
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      color: ${theme.colors.title};
+    }
     ${bpMaxSM} {
       p,
       em,
@@ -144,6 +169,8 @@ export default ({
   const keywords = (frontmatterKeywords || siteKeywords).join(', ')
   const description = frontmatterDescription || siteDescription
 
+  console.log('themeName: ', theme.themeName)
+
   return (
     <ThemeProvider theme={theme}>
       <Fragment>
@@ -167,7 +194,7 @@ export default ({
             <html lang="en" />
             <noscript>This site runs best with JavaScript enabled.</noscript>
           </Helmet>
-          <Header dark={dark} bgColor={headerBg} headerColor={headerColor} />
+          <Header />
           <MDXProvider components={mdxComponents}>
             <Fragment>{children}</Fragment>
           </MDXProvider>

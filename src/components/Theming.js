@@ -7,7 +7,10 @@ const themes = {
     colors: {
       primary: colors.blue,
       text: colors.black,
-      bg: colors.white,
+      bodyBg: colors.white,
+      headerBg: colors.blue,
+      link: colors.blue,
+      title: colors.black,
       ...colors,
     },
   },
@@ -16,7 +19,10 @@ const themes = {
     colors: {
       primary: colors.pink,
       text: colors.white,
-      bg: colors.black,
+      bodyBg: colors.black,
+      headerBg: colors.black,
+      link: colors.pink,
+      title: colors.pink,
       ...colors,
     },
   },

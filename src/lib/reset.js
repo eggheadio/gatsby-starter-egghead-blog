@@ -33,23 +33,9 @@ const reset = css`
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
-  body {
-    color: ${theme.colors.body_color};
-    background-color: ${theme.colors.bg_color};
-  }
-  ::selection {
-    color: ${theme.colors.white};
-    background-color: ${theme.colors.link_color};
-  }
-
   a {
-    color: ${theme.colors.link_color};
-    transition: ${theme.transition.ease};
+    transition: 150ms;
     text-decoration: none;
-    &:hover,
-    &:focus {
-      color: ${theme.colors.link_color_hover};
-    }
   }
 
   a:not([href]):not([tabindex]) {

@@ -15,7 +15,7 @@ const Header = ({ siteTitle }) => {
         flex-shrink: 0;
         background: none;
         padding: 20px 0;
-        background: ${theme.colors.bg};
+        background: ${theme.colors.headerBg};
       `}
     >
       <Container noVerticalPadding>
@@ -27,7 +27,12 @@ const Header = ({ siteTitle }) => {
             align-items: center;
           `}
         >
-          <Link to="/" aria-label="go to homepage" activeClassName="active">
+          <Link
+            aria-label="go to homepage"
+            css={css`
+              color: white;
+            `}
+          >
             {siteTitle}
           </Link>
           <div
