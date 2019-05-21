@@ -14,7 +14,7 @@ const Header = ({ siteTitle }) => {
         width: 100%;
         flex-shrink: 0;
         background: none;
-        padding: 30px 0 0 0;
+        padding: 20px 0;
         background: ${theme.colors.bg};
       `}
     >

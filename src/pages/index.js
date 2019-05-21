@@ -99,11 +99,7 @@ export default function Index({ data: { site, allMdx } }) {
             </Description>
           </div>
         ))}
-        <Link
-          to="/blog"
-          aria-label="Visit blog page"
-          className="button-secondary"
-        >
+        <Link to="/blog" aria-label="Visit blog page">
           View all articles
         </Link>
         <hr />

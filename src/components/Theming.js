@@ -5,7 +5,7 @@ const themes = {
   default: {
     themeName: 'default',
     colors: {
-      primary: colors.pink,
+      primary: colors.blue,
       text: colors.black,
       bg: colors.white,
       ...colors,
