@@ -1,13 +1,13 @@
 import React from 'react'
-import { css } from '@emotion/core'
 import theme from 'prism-react-renderer/themes/oceanicNext'
 import Highlight, { defaultProps } from 'prism-react-renderer'
 import { LiveProvider, LiveEditor, LiveError, LivePreview } from 'react-live'
 
-const Code = ({ codeString, language, ...props }) => {
+const Code = ({children, codeString, className = 'language-js', ...props }) => {
+  const language = className.replace(/language-/, '')
   if (props['react-live']) {
     return (
-      <LiveProvider code={codeString} noInline={true}>
+      <LiveProvider code={children.trim()} theme={theme}>
         <LiveEditor />
         <LiveError />
         <LivePreview />
@@ -17,26 +17,16 @@ const Code = ({ codeString, language, ...props }) => {
     return (
       <Highlight
         {...defaultProps}
-        code={codeString}
+        code={children.trim()}
         language={language}
         theme={theme}
       >
         {({ className, style, tokens, getLineProps, getTokenProps }) => (
-          <pre className={className} style={style}>
+          <pre className={className} style={{ ...style, padding: '20px' }}>
             {tokens.map((line, i) => (
-              <div {...getLineProps({ line, key: i })}>
-                <span
-                  css={css`
-                    display: inline-block;
-                    width: 2em;
-                    user-select: none;
-                    opacity: 0.3;
-                  `}
-                >
-                  {i + 1}
-                </span>
+              <div key={i} {...getLineProps({ line, key: i })}>
                 {line.map((token, key) => (
-                  <span {...getTokenProps({ token, key })} />
+                  <span key={key} {...getTokenProps({ token, key })} />
                 ))}
               </div>
             ))}
