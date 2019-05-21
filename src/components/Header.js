@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link } from 'gatsby'
+import { Link, StaticQuery, graphql } from 'gatsby'
 import { css } from '@emotion/core'
 import { useTheme } from './Theming'
 import ThemeToggler from './ThemeToggler'
@@ -69,14 +69,21 @@ const Header = ({ siteTitle }) => {
   )
 }
 
-export default Header
-
-export const pageQuery = graphql`
-  query {
-    site {
-      siteMetadata {
-        title
+const ConnectedHeader = props => (
+  <StaticQuery
+    query={graphql`
+      query {
+        site {
+          siteMetadata {
+            title
+          }
+        }
       }
-    }
-  }
-`
+    `}
+    render={data => (
+      <Header siteTitle={data.site.siteMetadata.title} {...props} />
+    )}
+  />
+)
+
+export default ConnectedHeader
