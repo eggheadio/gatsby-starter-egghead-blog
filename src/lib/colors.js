@@ -2,9 +2,9 @@ const colors = {
   black: '#131415',
   white: '#fff',
   pink: 'DEEPPINK',
-  gray: '#D3D3D3',
+  gray: '#fafafa',
   red: '#E74C3C',
-  blue: '#0078CC',
+  blue: '#5348ff',
 }
 
 export default colors

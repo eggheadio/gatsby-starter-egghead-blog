@@ -49,7 +49,9 @@ const Blog = ({
               }
               .gatsby-image-wrapper {
               }
-              background: ${theme.colors.bodyBg};
+              background: ${theme.themeName === 'default'
+                ? theme.colors.white
+                : theme.colors.black};
               color: ${theme.colors.black};
               padding: 40px;
               ${bpMaxSM} {

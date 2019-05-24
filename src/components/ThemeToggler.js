@@ -3,7 +3,6 @@ import Button from './Button'
 import styled from '@emotion/styled'
 import { FiMoon, FiSun } from 'react-icons/fi'
 import { useTheme } from './Theming'
-import { rgba } from 'polished'
 
 const DarkMode = styled(FiMoon)({
   display: 'flex',
@@ -45,7 +44,6 @@ const ThemeToggler = ({ toggleTheme, themeName }) => {
       aria-label={
         themeName === 'dark' ? 'Switch to light mode' : 'Switch to dark mode'
       }
-      // css={{ position: 'fixed', right: '20px', top: '20px' }}
       onClick={() => toggleTheme(themeName === 'dark' ? 'default' : 'dark')}
     >
       {themeName === 'dark' ? (

@@ -57,11 +57,7 @@ const Description = styled.p`
 export default function Index({ data: { site, allMdx } }) {
   const theme = useTheme()
   return (
-    <Layout
-      site={site}
-      headerColor={theme.colors.white}
-      headerBg={theme.colors.primary}
-    >
+    <Layout site={site}>
       <Hero />
       <Container
         css={css`
