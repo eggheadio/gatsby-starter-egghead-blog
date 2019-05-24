@@ -28,6 +28,7 @@ const Header = ({ siteTitle }) => {
           `}
         >
           <Link
+            to="/"
             aria-label="go to homepage"
             css={css`
               color: white;

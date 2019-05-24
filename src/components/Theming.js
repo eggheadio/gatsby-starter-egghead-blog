@@ -7,6 +7,7 @@ const themes = {
     colors: {
       primary: colors.blue,
       text: colors.black,
+      textInverted: colors.white,
       bodyBg: colors.white,
       headerBg: colors.blue,
       link: colors.blue,
@@ -19,6 +20,7 @@ const themes = {
     colors: {
       primary: colors.pink,
       text: colors.white,
+      textInverted: colors.black,
       bodyBg: colors.black,
       headerBg: colors.black,
       link: colors.pink,

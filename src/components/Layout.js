@@ -2,7 +2,7 @@ import React, { Fragment, useState, useEffect } from 'react'
 import Helmet from 'react-helmet'
 import { graphql } from 'gatsby'
 import { MDXProvider } from '@mdx-js/react'
-import { darken, lighten } from 'polished'
+import { lighten } from 'polished'
 import { Global, css } from '@emotion/core'
 import { ThemeProvider, themes } from './Theming'
 import { bpMaxSM } from '../lib/breakpoints'
@@ -168,8 +168,6 @@ export default ({
 
   const keywords = (frontmatterKeywords || siteKeywords).join(', ')
   const description = frontmatterDescription || siteDescription
-
-  console.log('themeName: ', theme.themeName)
 
   return (
     <ThemeProvider theme={theme}>
