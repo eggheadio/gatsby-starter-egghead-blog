@@ -34,7 +34,7 @@ const reset = css`
     -moz-osx-font-smoothing: grayscale;
   }
   a {
-    transition: 150ms;
+    transition: 100ms;
     text-decoration: none;
   }
 
