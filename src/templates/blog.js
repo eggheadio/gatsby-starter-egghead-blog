@@ -7,7 +7,7 @@ import { useTheme } from 'components/Theming'
 import SEO from '../components/SEO'
 import Layout from '../components/Layout'
 import Link from '../components/Link'
-import { bpMaxSM } from '../lib/breakpoints'
+import { bpMaxSM, bpMaxMD } from '../lib/breakpoints'
 
 const Blog = ({
   data: { site, allMdx },
@@ -36,7 +36,10 @@ const Blog = ({
             key={post.id}
             css={css`
               :not(:first-of-type) {
-                margin-top: 20px;
+                margin-top: 60px;
+                ${bpMaxMD} {
+                  margin-top: 40px;
+                }
                 ${bpMaxSM} {
                   margin-top: 20px;
                 }
@@ -49,11 +52,6 @@ const Blog = ({
               }
               .gatsby-image-wrapper {
               }
-              background: ${theme.themeName === 'default'
-                ? theme.colors.white
-                : theme.colors.black};
-              color: ${theme.colors.black};
-              padding: 40px;
               ${bpMaxSM} {
                 padding: 20px;
               }
@@ -107,9 +105,7 @@ const Blog = ({
             </Link>
           </div>
         ))}
-        <br />
-        <br />
-        <div>
+        <div css={css({ marginTop: '30px' })}>
           {nextPagePath && (
             <Link to={nextPagePath} aria-label="View next page">
               Next Page →

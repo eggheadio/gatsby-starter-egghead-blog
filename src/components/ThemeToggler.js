@@ -37,7 +37,10 @@ const ThemeToggler = ({ toggleTheme, themeName }) => {
         background: theme.colors.headerBg,
         '@media (hover: hover)': {
           ':hover': {
-            background: theme.colors.title,
+            background:
+              theme.themeName === 'default'
+                ? theme.colors.text
+                : theme.colors.primary,
           },
         },
       }}

@@ -13,23 +13,24 @@ import { fonts } from '../lib/typography'
 import config from '../../config/website'
 import Footer from '../components/Footer'
 
+console.log('reset: ', reset)
+
 const getGlobalStyles = theme => {
   return css`
     body {
       background: ${theme.colors.bodyBg};
       color: ${theme.colors.text};
     }
-    ::selection {
-      color: ${theme.colors.text};
+    &::selection {
+      color: ${theme.colors.white};
       background-color: ${theme.colors.primary};
     }
-
     a {
       color: ${theme.colors.link};
       text-decoration: none;
       &:hover,
       &:focus {
-        color: ${lighten(0.5, theme.colors.link)};
+        color: ${lighten(0.15, theme.colors.link)};
       }
     }
     h1,
@@ -38,7 +39,17 @@ const getGlobalStyles = theme => {
     h4,
     h5,
     h6 {
-      color: ${theme.colors.title};
+      color: ${theme.colors.text};
+      a {
+        color: ${theme.colors.text};
+        &:hover,
+        &:focus {
+          color: ${theme.colors.text};
+        }
+        &:hover {
+          text-decoration: underline;
+        }
+      }
     }
     ${bpMaxSM} {
       p,
@@ -92,8 +103,8 @@ const getGlobalStyles = theme => {
       border: 1px solid ${theme.colors.primary};
       transition: all 150ms;
       :hover {
-        background: ${lighten(0.5, theme.colors.primary)};
-        border: 1px solid ${lighten(0.5, theme.colors.primary)};
+        background: ${lighten(0.15, theme.colors.primary)};
+        border: 1px solid ${lighten(0.15, theme.colors.primary)};
       }
     }
     pre {
@@ -120,7 +131,6 @@ const getGlobalStyles = theme => {
         border-radius: 5px;
       }
     }
-    ${reset};
   `
 }
 
@@ -128,9 +138,6 @@ export default ({
   site,
   frontmatter = {},
   children,
-  dark,
-  headerBg,
-  headerColor,
   noFooter,
   noSubscribeForm,
 }) => {
@@ -172,6 +179,7 @@ export default ({
   return (
     <ThemeProvider theme={theme}>
       <Fragment>
+        <Global styles={reset} />
         <Global styles={getGlobalStyles(theme)} />
         <div
           css={css`
@@ -179,7 +187,6 @@ export default ({
             flex-direction: column;
             width: 100%;
             min-height: 100vh;
-            background: ${theme.colors.bg};
           `}
         >
           <Helmet

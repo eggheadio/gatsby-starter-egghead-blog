@@ -51,22 +51,6 @@ const reset = css`
     }
   }
 
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-    a {
-      color: inherit;
-      &:hover,
-      &:focus {
-        color: inherit;
-        text-decoration: none;
-      }
-    }
-  }
-
   blockquote {
     border-left: 5px solid ${theme.colors.link_color};
     padding-left: 1rem !important;
