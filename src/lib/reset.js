@@ -1,8 +1,10 @@
 import { css } from '@emotion/core'
-import theme from './theme'
+import { useTheme } from '../components/Theming'
 import typography, { fonts } from '../lib/typography'
 
-const reset = css`
+const resetStyles = () => {
+  const theme = useTheme()
+  return css`
   form {
     margin: 0;
   }
@@ -52,7 +54,7 @@ const reset = css`
   }
 
   blockquote {
-    border-left: 5px solid ${theme.colors.link_color};
+    border-left: 5px solid ${theme.colors.link};
     padding-left: 1rem !important;
     margin-left: 0 !important;
     margin-right: 0 !important;
@@ -90,12 +92,12 @@ const reset = css`
   }
   table {
     border-collapse: collapse;
-    background-color: ${theme.colors.bg_color};
+    background-color: ${theme.colors.bodyBg};
   }
   caption {
     padding-top: 1.5rem;
     padding-bottom: 1.5rem;
-    color: ${theme.colors.body_color};
+    color: ${theme.colors.bodyBg};
     text-align: center;
     caption-side: bottom;
   }
@@ -153,5 +155,6 @@ const reset = css`
     display: none !important;
   }
 `
+}
 
-export default reset
+export default resetStyles
