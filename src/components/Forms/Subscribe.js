@@ -149,7 +149,12 @@ class SignUp extends React.Component {
                       type="text"
                     />
                   </label>
-                  <label htmlFor="email">
+                  <label
+                    htmlFor="email"
+                    css={css`
+                      margin-left: 10px;
+                    `}
+                  >
                     <div
                       css={css`
                         display: flex;
