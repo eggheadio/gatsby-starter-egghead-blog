@@ -101,8 +101,8 @@ const getGlobalStyles = theme => {
       border: 1px solid ${theme.colors.primary};
       transition: all 150ms;
       :hover {
-        background: ${lighten(0.15, theme.colors.primary)};
-        border: 1px solid ${lighten(0.15, theme.colors.primary)};
+        background: ${lighten(0.05, theme.colors.primary)};
+        border: 1px solid ${lighten(0.05, theme.colors.primary)};
       }
     }
     pre {
