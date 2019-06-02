@@ -17,11 +17,11 @@ const themes = {
   dark: {
     themeName: 'dark',
     colors: {
-      primary: colors.blue,
+      primary: lighten(0.05, colors.blue),
       text: colors.white,
       bodyBg: colors.black,
       headerBg: colors.black,
-      link: lighten(0.2, colors.blue),
+      link: lighten(0.05, colors.blue),
       ...colors,
     },
   },

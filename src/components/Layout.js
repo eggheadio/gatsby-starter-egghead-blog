@@ -13,8 +13,6 @@ import { fonts } from '../lib/typography'
 import config from '../../config/website'
 import Footer from '../components/Footer'
 
-console.log('reset: ', reset)
-
 const getGlobalStyles = theme => {
   return css`
     body {

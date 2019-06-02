@@ -3,7 +3,6 @@ import { graphql } from 'gatsby'
 import Img from 'gatsby-image'
 import { css } from '@emotion/core'
 import Container from 'components/Container'
-import { useTheme } from 'components/Theming'
 import SEO from '../components/SEO'
 import Layout from '../components/Layout'
 import Link from '../components/Link'
@@ -24,8 +23,6 @@ const Blog = ({
       ),
     )
     .filter(post => post !== undefined)
-
-  const theme = useTheme()
 
   return (
     <Layout site={site}>
