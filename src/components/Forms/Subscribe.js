@@ -2,7 +2,7 @@ import React from 'react'
 import { Formik, Field, Form, ErrorMessage } from 'formik'
 import * as Yup from 'yup'
 import { css } from '@emotion/core'
-import theme from '../../lib/theme'
+import { withTheme } from '../Theming'
 import { rhythm } from '../../lib/typography'
 import { bpMaxSM } from '../../lib/breakpoints'
 import Message from '../ConfirmMessage/Message'
@@ -67,6 +67,7 @@ class SignUp extends React.Component {
 
   render() {
     const { submitted, response, errorMessage } = this.state
+    const { theme } = this.props
     const successful = response && response.status === 'success'
 
     return (
@@ -74,8 +75,8 @@ class SignUp extends React.Component {
         {!successful && (
           <h2
             css={css`
-              margin-bottom: ${rhythm(1)}
-              margin-top: 0
+              margin-bottom: ${rhythm(1)};
+              margin-top: 0;
             `}
           >
             Join the Newsletter
@@ -94,35 +95,33 @@ class SignUp extends React.Component {
               {!successful && (
                 <Form
                   css={css`
-                    display: flex
-                    align-items: flex-end
-                    label:not(:first-of-type),
+                    display: flex;
+                    align-items: flex-end;
                     button {
-                      margin-left: 10px
+                      margin-left: 10px;
                     }
                     .field-error {
-                      display: block
-                      //position: absolute
-                      color: ${theme.colors.red}
-                      font-size: 80%
+                      display: block;
+                      color: ${theme.colors.red};
+                      font-size: 80%;
                     }
                     input,
                     label {
-                      width: 100%
+                      width: 100%;
                     }
                     ${bpMaxSM} {
-                      flex-direction: column
-                      align-items: flex-start
-                      width: auto
+                      flex-direction: column;
+                      align-items: flex-start;
+                      width: auto;
                       label,
                       input {
-                        margin: 5px 0 0 0 !important
-                        width: 100%
-                        display: flex
-                        flex-direction: column
+                        margin: 5px 0 0 0 !important;
+                        width: 100%;
+                        display: flex;
+                        flex-direction: column;
                       }
                       button {
-                        margin: 20px 0 0 0
+                        margin: 20px 0 0 0;
                       }
                     }
                   `}
@@ -130,9 +129,9 @@ class SignUp extends React.Component {
                   <label htmlFor="first_name">
                     <div
                       css={css`
-                        display: flex
-                        justify-content: space-between
-                        align-items: flex-end
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: flex-end;
                       `}
                     >
                       First Name
@@ -153,9 +152,9 @@ class SignUp extends React.Component {
                   <label htmlFor="email">
                     <div
                       css={css`
-                        display: flex
-                        justify-content: space-between
-                        align-items: flex-end
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: flex-end;
                       `}
                     >
                       Email
@@ -194,4 +193,4 @@ class SignUp extends React.Component {
   }
 }
 
-export default SignUp
+export default withTheme(SignUp)
