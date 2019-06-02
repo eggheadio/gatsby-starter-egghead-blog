@@ -8,6 +8,7 @@
     "@callstack/react-theme-provider": "^2.0.1",
     "@emotion/core": "^10.0.10",
     "@emotion/styled": "^10.0.11",
+    "@hot-loader/react-dom": "16.8.6",
     "@mdx-js/mdx": "^1.0.18",
     "@mdx-js/react": "^1.0.16",
     "core-js": "^2.6.1",
