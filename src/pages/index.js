@@ -2,50 +2,52 @@ import React from 'react'
 import { graphql } from 'gatsby'
 import { css } from '@emotion/core'
 import styled from '@emotion/styled'
-import Layout from '../components/Layout'
-import Link from '../components/Link'
+import Layout from 'components/Layout'
+import Link from 'components/Link'
+import { useTheme } from 'components/Theming'
 import Container from 'components/Container'
 import { rhythm } from '../lib/typography'
-import theme from '../../config/theme'
 
-const Hero = () => (
-  <section
-    css={css`
-      * {
-        color: ${theme.colors.white};
-      }
-      width: 100%;
-      background: ${theme.brand.primary};
-      padding: 20px 0 30px 0;
-      display: flex;
-    `}
-  >
-    <Container
+const Hero = () => {
+  const theme = useTheme()
+  return (
+    <section
       css={css`
+        color: ${theme.colors.white};
+        width: 100%;
+        background: ${theme.colors.primary};
+        padding: 20px 0 30px 0;
         display: flex;
-        flex-direction: column;
       `}
     >
-      <h1
+      <Container
         css={css`
-          position: relative;
-          z-index: 5;
-          line-height: 1.5;
-          margin: 0;
-          max-width: ${rhythm(15)};
+          display: flex;
+          flex-direction: column;
         `}
       >
-        Your blog says the things you want to say.
-      </h1>
-    </Container>
-    <div
-      css={css`
-        height: 150px;
-        overflow: hidden;
-      `}
-    />
-  </section>
-)
+        <h1
+          css={css`
+            color: ${theme.colors.white};
+            position: relative;
+            z-index: 5;
+            line-height: 1.5;
+            margin: 0;
+            max-width: ${rhythm(15)};
+          `}
+        >
+          Your blog says the things you want to say.
+        </h1>
+      </Container>
+      <div
+        css={css`
+          height: 150px;
+          overflow: hidden;
+        `}
+      />
+    </section>
+  )
+}
 
 const Description = styled.p`
   margin-bottom: 10px;
@@ -53,12 +55,9 @@ const Description = styled.p`
 `
 
 export default function Index({ data: { site, allMdx } }) {
+  const theme = useTheme()
   return (
-    <Layout
-      site={site}
-      headerColor={theme.colors.white}
-      headerBg={theme.brand.primary}
-    >
+    <Layout site={site}>
       <Hero />
       <Container
         css={css`
@@ -75,9 +74,9 @@ export default function Index({ data: { site, allMdx } }) {
             <h2
               css={css({
                 marginBottom: rhythm(0.3),
-                transition: theme.transition.ease,
+                transition: 'all 150ms ease',
                 ':hover': {
-                  color: theme.brand.primary,
+                  color: theme.colors.primary,
                 },
               })}
             >
@@ -99,11 +98,7 @@ export default function Index({ data: { site, allMdx } }) {
             </Description>
           </div>
         ))}
-        <Link
-          to="/blog"
-          aria-label="Visit blog page"
-          className="button-secondary"
-        >
+        <Link to="/blog" aria-label="Visit blog page">
           View all articles
         </Link>
         <hr />

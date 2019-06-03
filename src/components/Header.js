@@ -1,66 +1,64 @@
 import React from 'react'
 import { Link, StaticQuery, graphql } from 'gatsby'
 import { css } from '@emotion/core'
-import theme from '../../config/theme'
+import { useTheme } from './Theming'
+import ThemeToggler from './ThemeToggler'
 
 import Container from './Container'
 
-const Header = ({
-  dark,
-  bgColor = 'none',
-  siteTitle,
-  headerColor = 'black',
-}) => (
-  <header
-    css={css`
-      width: 100%;
-      flex-shrink: 0;
-      background: none;
-      padding: 30px 0 0 0;
-      background: ${dark ? '#090909' : `${bgColor}` || 'none'};
-    `}
-  >
-    <Container noVerticalPadding>
-      <nav
-        css={css`
-          width: 100%;
-          display: flex;
-          justify-content: space-between;
-          align-items: center;
-          color: ${headerColor};
-          a {
-            color: ${headerColor ? headerColor : theme.colors.body_color};
-          }
-          a:hover {
-            color: ${headerColor === theme.colors.white
-              ? 'white'
-              : theme.colors.link_color_hover};
-          }
-        `}
-      >
-        <Link to="/" aria-label="go to homepage" activeClassName="active">
-          {siteTitle}
-        </Link>
-        <div
+const Header = ({ siteTitle }) => {
+  const theme = useTheme()
+  return (
+    <header
+      css={css`
+        width: 100%;
+        flex-shrink: 0;
+        background: none;
+        padding: 20px 0;
+        background: ${theme.colors.headerBg};
+      `}
+    >
+      <Container noVerticalPadding>
+        <nav
           css={css`
-            font-size: 16px;
-            line-height: 1.25;
+            width: 100%;
             display: flex;
+            justify-content: space-between;
             align-items: center;
-            a {
-              color: ${dark ? '#fbfbfb' : 'rgba(0,0,0,0.85)'};
-              text-decoration: none;
-              & + a {
-                margin-left: 32px;
-              }
-            }
-            .active {
-              display: none;
-              visibility: hidden;
-            }
           `}
         >
-          {/*
+          <Link
+            to="/"
+            aria-label="go to homepage"
+            css={css`
+              color: white;
+              &:hover {
+                color: white;
+                text-decoration: none;
+              }
+            `}
+          >
+            {siteTitle}
+          </Link>
+          <div
+            css={css`
+              font-size: 16px;
+              line-height: 1.25;
+              display: flex;
+              align-items: center;
+              a {
+                text-decoration: none;
+                & + a {
+                  margin-left: 32px;
+                }
+              }
+              .active {
+                display: none;
+                visibility: hidden;
+              }
+            `}
+          >
+            {/*
           <Link
             to="/blog"
             activeClassName="active"
@@ -69,11 +67,17 @@ const Header = ({
             Blog
           </Link>
           */}
-        </div>
-      </nav>
-    </Container>
-  </header>
-)
+            <ThemeToggler
+              css={{}}
+              toggleTheme={theme.toggleTheme}
+              themeName={theme.themeName}
+            />
+          </div>
+        </nav>
+      </Container>
+    </header>
+  )
+}
 
 const ConnectedHeader = props => (
   <StaticQuery

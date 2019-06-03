@@ -1,8 +1,10 @@
 import { css } from '@emotion/core'
-import theme from '../../config/theme'
+import { useTheme } from '../components/Theming'
 import typography, { fonts } from '../lib/typography'
 
-const reset = css`
+const resetStyles = () => {
+  const theme = useTheme()
+  return css`
   form {
     margin: 0;
   }
@@ -33,23 +35,9 @@ const reset = css`
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
-  body {
-    color: ${theme.colors.body_color};
-    background-color: ${theme.colors.bg_color};
-  }
-  ::selection {
-    color: ${theme.colors.white};
-    background-color: ${theme.colors.link_color};
-  }
-
   a {
-    color: ${theme.colors.link_color};
-    transition: ${theme.transition.ease};
+    transition: 100ms;
     text-decoration: none;
-    &:hover,
-    &:focus {
-      color: ${theme.colors.link_color_hover};
-    }
   }
 
   a:not([href]):not([tabindex]) {
@@ -65,24 +53,8 @@ const reset = css`
     }
   }
 
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-    a {
-      color: inherit;
-      &:hover,
-      &:focus {
-        color: inherit;
-        text-decoration: none;
-      }
-    }
-  }
-
   blockquote {
-    border-left: 5px solid ${theme.colors.link_color};
+    border-left: 5px solid ${theme.colors.link};
     padding-left: 1rem !important;
     margin-left: 0 !important;
     margin-right: 0 !important;
@@ -120,12 +92,12 @@ const reset = css`
   }
   table {
     border-collapse: collapse;
-    background-color: ${theme.colors.bg_color};
+    background-color: ${theme.colors.bodyBg};
   }
   caption {
     padding-top: 1.5rem;
     padding-bottom: 1.5rem;
-    color: ${theme.colors.body_color};
+    color: ${theme.colors.bodyBg};
     text-align: center;
     caption-side: bottom;
   }
@@ -183,5 +155,6 @@ const reset = css`
     display: none !important;
   }
 `
+}
 
-export default reset
+export default resetStyles
