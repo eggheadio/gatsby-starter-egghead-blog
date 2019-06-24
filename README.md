@@ -35,6 +35,6 @@ A starter project in [Gatsby.js](https://www.gatsbyjs.org/) with [MDX](https://g
 
 - `gatsby new gatsby-starter-egghead-blog git@github.com:eggheadio/gatsby-starter-egghead-blog.git`
 - `cd gatsby-starter-egghead-blog`
-- `npm install`
+- `yarn`
 - `gatsby develop`
 - visit http://localhost:8000
