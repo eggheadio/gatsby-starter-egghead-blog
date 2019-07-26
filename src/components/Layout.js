@@ -7,7 +7,7 @@ import { Global, css } from '@emotion/core'
 import { ThemeProvider, themes } from './Theming'
 import { bpMaxSM } from '../lib/breakpoints'
 import mdxComponents from './mdx'
-import Header from './Header'
+import Header from './Header/'
 import reset from '../lib/reset'
 import { fonts } from '../lib/typography'
 import config from '../../config/website'
@@ -148,12 +148,9 @@ export default ({
 
   const [themeName, setTheme] = useState(initializeTheme)
 
-  useEffect(
-    () => {
-      localStorage.setItem('theme', themeName)
-    },
-    [themeName],
-  )
+  useEffect(() => {
+    localStorage.setItem('theme', themeName)
+  }, [themeName])
 
   const toggleTheme = name => setTheme(name)
   const theme = {
