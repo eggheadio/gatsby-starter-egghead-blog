@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { css } from '@emotion/core'
-import Container from '../container'
+import Container from '../Container'
 
 import { bpMaxSM } from '../../lib/breakpoints'
 
