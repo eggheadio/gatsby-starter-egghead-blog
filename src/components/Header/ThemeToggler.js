@@ -2,7 +2,7 @@ import React from 'react'
 import Button from './Button'
 import styled from '@emotion/styled'
 import { FiMoon, FiSun } from 'react-icons/fi'
-import { useTheme } from './Theming'
+import { useTheme } from '../Theming'
 
 const DarkMode = styled(FiMoon)({
   display: 'flex',

@@ -1,10 +1,13 @@
 import React from 'react'
 import { Link, StaticQuery, graphql } from 'gatsby'
 import { css } from '@emotion/core'
-import { useTheme } from './Theming'
+import { useTheme } from '../Theming'
 import ThemeToggler from './ThemeToggler'
+import { bpMaxSM } from '../../lib/breakpoints'
+import MobileMenu from './MobileMenu'
+import Links from './Links'
 
-import Container from './Container'
+import Container from '../Container'
 
 const Header = ({ siteTitle }) => {
   const theme = useTheme()
@@ -48,9 +51,9 @@ const Header = ({ siteTitle }) => {
               align-items: center;
               a {
                 text-decoration: none;
-                & + a {
-                  margin-left: 32px;
-                }
+                color: ${theme.colors.white};
+                margin-left: 16px;
+                margin-right: 16px;
               }
               .active {
                 display: none;
@@ -58,20 +61,20 @@ const Header = ({ siteTitle }) => {
               }
             `}
           >
-            {/*
-          <Link
-            to="/blog"
-            activeClassName="active"
-            aria-label="View blog page"
-          >
-            Blog
-          </Link>
-          */}
-            <ThemeToggler
-              css={{}}
-              toggleTheme={theme.toggleTheme}
-              themeName={theme.themeName}
-            />
+            <div
+              css={css`
+                display: flex;
+                align-items: center;
+                ${bpMaxSM} {
+                  display: none;
+                }
+              `}
+            >
+              <Links />
+            </div>
+            <MobileMenu>
+              <Links />
+            </MobileMenu>
           </div>
         </nav>
       </Container>
