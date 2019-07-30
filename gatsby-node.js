@@ -55,9 +55,6 @@ exports.createPages = ({ actions, graphql }) =>
               slug
               date
             }
-            code {
-              scope
-            }
           }
         }
       }
