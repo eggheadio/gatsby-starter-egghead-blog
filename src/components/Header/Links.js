@@ -1,6 +1,5 @@
 import React from 'react'
-import { Link, StaticQuery, graphql } from 'gatsby'
-import { css } from '@emotion/core'
+import { Link } from 'gatsby'
 import { useTheme } from '../Theming'
 import ThemeToggler from './ThemeToggler'
 
