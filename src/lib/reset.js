@@ -2,7 +2,7 @@ import { css } from '@emotion/core'
 import { useTheme } from '../components/Theming'
 import typography, { fonts } from '../lib/typography'
 
-const resetStyles = () => {
+const ResetStyles = () => {
   const theme = useTheme()
   return css`
   form {
@@ -157,4 +157,4 @@ const resetStyles = () => {
 `
 }
 
-export default resetStyles
+export default ResetStyles
