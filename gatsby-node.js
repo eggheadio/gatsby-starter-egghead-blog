@@ -1,7 +1,6 @@
 const path = require('path')
 
 const _ = require('lodash')
-const paginate = require('gatsby-awesome-pagination')
 const PAGINATION_OFFSET = 7
 
 const createPosts = (createPage, createRedirect, edges) => {
@@ -200,7 +199,7 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
     createNodeField({
       name: 'isPost',
       node,
-      value: true
+      value: true,
     })
   }
 }
