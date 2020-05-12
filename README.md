@@ -38,3 +38,6 @@ A starter project in [Gatsby.js](https://www.gatsbyjs.org/) with [MDX](https://g
 - `yarn`
 - `gatsby develop`
 - visit http://localhost:8000
+
+## Set up Redirects
+This starter supports a `redirects` property on posts so that you can define alias urls for blog posts. This won't work out of the box. We use the `createRedirect` Gatsby actions ([docs](https://www.gatsbyjs.org/docs/actions/#createRedirect)) which requires an additional plugin to be added to your site, given what provider you deploy your site to. Two popular ones are [`gatsby-plugin-netlify`](https://www.gatsbyjs.org/packages/gatsby-plugin-netlify/) or [`gatsby-plugin-s3`](https://www.gatsbyjs.org/packages/gatsby-plugin-s3/).
