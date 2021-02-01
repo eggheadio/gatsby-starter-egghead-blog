@@ -35,4 +35,4 @@ const Button = ({ to, children, secondary, ...restProps }) => {
   )
 }
 
-export default Button
+export default Button;
